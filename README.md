@@ -41,7 +41,6 @@ This project provides a conversational interface for common questions while keep
 
 The intended guest journey is:
 
-```text
 Guest opens hotel website
         ↓
 Explores hotel information
