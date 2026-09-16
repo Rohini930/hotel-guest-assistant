@@ -1,0 +1,47 @@
+{
+  "hotel": {
+    "name": "The Meridian House",
+    "location": "Bengaluru, Karnataka",
+    "check_in": "2:00 PM",
+    "check_out": "11:00 AM",
+    "description": "A contemporary city hotel designed for business and leisure stays."
+  },
+  "amenities": {
+    "swimming_pool": "Yes, an outdoor swimming pool is available.",
+    "gym": "Yes, the fitness centre is open from 6:00 AM to 10:00 PM.",
+    "wifi": "Complimentary Wi-Fi is available throughout the hotel.",
+    "parking": "Complimentary on-site parking is available for hotel guests."
+  },
+  "dining": {
+    "breakfast": "Breakfast is included with the Executive and Family packages. For other room rates, breakfast can be added separately.",
+    "breakfast_hours": "7:00 AM to 10:30 AM"
+  },
+  "policies": {
+    "cancellation": "Reservations can be cancelled without charge up to 24 hours before check-in. Later cancellations may be charged for one night.",
+    "children": "Children are welcome. Maximum occupancy depends on the selected room.",
+    "pets": "Pets are not currently permitted."
+  },
+  "rooms": [
+    {
+      "id": "deluxe",
+      "name": "Deluxe King Room",
+      "capacity": 2,
+      "description": "Comfortable room with one king bed, work desk, and city view.",
+      "nightly_rate": 6500
+    },
+    {
+      "id": "executive",
+      "name": "Executive Room",
+      "capacity": 2,
+      "description": "Business-friendly room with a king bed, workspace, and executive benefits.",
+      "nightly_rate": 8200
+    },
+    {
+      "id": "family",
+      "name": "Family Suite",
+      "capacity": 4,
+      "description": "Spacious suite suitable for families or small groups, with a king bed and sofa bed.",
+      "nightly_rate": 10500
+    }
+  ]
+}

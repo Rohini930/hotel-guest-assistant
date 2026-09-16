@@ -1,0 +1,827 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #24221f;
+  background: #f5f2ec;
+  --ink: #24221f;
+  --muted: #77736c;
+  --cream: #f5f2ec;
+  --paper: #fbfaf7;
+  --line: #ddd8ce;
+  --accent: #a9784b;
+  --deep: #25241f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  height: 78px;
+  padding: 0 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f5f2ecf7;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.brand-mark {
+  width: 37px;
+  height: 37px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--ink);
+  font: 600 12px "Playfair Display", serif;
+}
+
+.brand strong {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+}
+
+.brand small {
+  display: block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 0.35em;
+}
+
+.nav {
+  display: flex;
+  gap: 30px;
+  font-size: 12px;
+  color: #5e5a54;
+}
+
+.header-action,
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--deep);
+  color: white;
+  padding: 12px 16px;
+  font-size: 11px;
+}
+
+.menu-button {
+  display: none;
+  background: none;
+  border: 0;
+}
+
+.hero {
+  min-height: 620px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+  background:
+    linear-gradient(90deg, #171613d6, #17161340),
+    url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2200&q=85")
+      center/cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 670px;
+  margin-left: 10vw;
+  padding: 90px 24px 100px 0;
+}
+
+.hero-kicker,
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.hero-kicker {
+  color: #ffffffb3;
+}
+
+.hero h1 {
+  margin: 16px 0;
+  font: 500 clamp(48px, 7vw, 88px) / 0.95 "Playfair Display", serif;
+  letter-spacing: -0.04em;
+}
+
+.hero h1 em,
+h2 em {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.hero p {
+  max-width: 500px;
+  color: #fffc;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.hero-button {
+  margin-top: 18px;
+}
+
+.hero-location {
+  position: absolute;
+  right: 5vw;
+  bottom: 35px;
+  z-index: 2;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: #ffffffa6;
+}
+
+.intro-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid var(--line);
+}
+
+.intro-strip div {
+  padding: 22px 6vw;
+  border-right: 1px solid var(--line);
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.intro-strip div:last-child {
+  border: 0;
+}
+
+.intro-strip span {
+  color: var(--accent);
+  font-size: 10px;
+}
+
+.intro-strip strong {
+  font: 500 15px "Playfair Display", serif;
+}
+
+.assistant-section {
+  padding: 110px 8vw;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+
+.section-heading h2,
+.availability-copy h2,
+.amenities-section h2 {
+  font: 500 clamp(40px, 5vw, 65px) / 1 "Playfair Display", serif;
+  letter-spacing: -0.03em;
+  margin: 10px 0 0;
+}
+
+.section-heading p {
+  max-width: 420px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.assistant-layout {
+  display: grid;
+  grid-template-columns: 310px 1fr;
+  gap: 30px;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.concierge-card {
+  background: var(--deep);
+  color: white;
+  padding: 30px;
+}
+
+.concierge-icon {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #ffffff40;
+  margin-bottom: 34px;
+}
+
+.concierge-card .eyebrow {
+  color: #c7a47e;
+}
+
+.concierge-card h3 {
+  font: 500 31px/1 "Playfair Display", serif;
+  margin: 10px 0;
+}
+
+.concierge-card p {
+  color: #bdb8af;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.quick-questions {
+  margin-top: 26px;
+}
+
+.quick-questions .eyebrow {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.quick-questions button {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: none;
+  padding: 13px 2px;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  color: #59554e;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.quick-questions button:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.chat-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  min-height: 610px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  padding: 19px 23px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  color: #77736c;
+}
+
+.assistant-status {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+}
+
+.assistant-status strong {
+  display: block;
+  font-size: 12px;
+}
+
+.assistant-status small {
+  display: block;
+  margin-top: 3px;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #738b63;
+}
+
+.messages {
+  flex: 1;
+  padding: 28px;
+  overflow-y: auto;
+  max-height: 470px;
+}
+
+.message-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.user-row {
+  flex-direction: row-reverse;
+}
+
+.avatar {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  font-size: 8px;
+}
+
+.assistant-avatar {
+  background: var(--deep);
+  color: white;
+}
+
+.user-avatar {
+  background: #e8e1d7;
+  color: #6c6257;
+}
+
+.message-bubble {
+  max-width: min(74%, 560px);
+  padding: 12px 15px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.assistant-bubble {
+  background: #f0ede7;
+}
+
+.user-bubble {
+  background: var(--deep);
+  color: white;
+}
+
+.typing {
+  display: flex;
+  gap: 4px;
+}
+
+.typing span {
+  width: 5px;
+  height: 5px;
+  background: #888;
+  border-radius: 50%;
+}
+
+.inline-error {
+  margin: 0 20px 10px;
+  padding: 10px 12px;
+  background: #f5e7e2;
+  color: #844e42;
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inline-error button {
+  border: 0;
+  background: none;
+  color: inherit;
+  text-decoration: underline;
+}
+
+.chat-input {
+  border-top: 1px solid var(--line);
+  padding: 13px;
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  outline: 0;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.chat-input button {
+  width: 42px;
+  border: 0;
+  background: var(--deep);
+  color: white;
+  cursor: pointer;
+}
+
+.availability-section {
+  background: #e8e1d7;
+  padding: 110px 8vw;
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 70px;
+}
+
+.availability-copy p {
+  max-width: 400px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 14px;
+  margin-top: 24px;
+}
+
+.availability-panel {
+  background: var(--paper);
+  padding: 30px;
+}
+
+.availability-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.7fr auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.field label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 7px;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: white;
+  padding: 12px;
+  outline: 0;
+}
+
+.availability-button {
+  height: 42px;
+  border: 0;
+  background: var(--deep);
+  color: white;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.results {
+  margin-top: 38px;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  border-top: 1px solid var(--line);
+  padding-top: 25px;
+  margin-bottom: 17px;
+}
+
+.results-header h3 {
+  font: 500 24px "Playfair Display", serif;
+  margin: 8px 0 0;
+}
+
+.results-header > span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.room-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  border: 1px solid var(--line);
+  margin-top: 12px;
+  background: white;
+}
+
+.room-image {
+  min-height: 210px;
+  background:
+    linear-gradient(135deg, #1e1a1526, #1e1a1590),
+    url("https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=700&q=80")
+      center/cover;
+  display: flex;
+  align-items: end;
+}
+
+.room-image-overlay {
+  color: #fffc;
+  padding: 14px;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+}
+
+.room-content {
+  padding: 23px;
+}
+
+.room-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.room-heading h3 {
+  font: 500 23px "Playfair Display", serif;
+  margin: 6px 0;
+}
+
+.room-price strong {
+  font: 500 17px "Playfair Display", serif;
+}
+
+.room-price span {
+  color: var(--muted);
+  font-size: 9px;
+}
+
+.room-content > p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.room-meta {
+  display: flex;
+  gap: 16px;
+  margin: 20px 0;
+  color: #6f6b64;
+  font-size: 10px;
+}
+
+.room-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.room-total {
+  border-top: 1px solid var(--line);
+  padding-top: 13px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.room-total strong {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.no-results {
+  padding: 25px;
+  background: #f1ede6;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.amenities-section {
+  padding: 110px 8vw;
+}
+
+.amenities-section h2 {
+  margin-bottom: 55px;
+}
+
+.amenity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.amenity-grid > div {
+  padding: 30px 25px 30px 0;
+  border-right: 1px solid var(--line);
+}
+
+.amenity-grid > div:not(:first-child) {
+  padding-left: 25px;
+}
+
+.amenity-grid > div:last-child {
+  border-right: 0;
+}
+
+.amenity-grid span {
+  color: var(--accent);
+  font-size: 10px;
+}
+
+.amenity-grid h3 {
+  font: 500 25px "Playfair Display", serif;
+  margin: 12px 0;
+}
+
+.amenity-grid p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.site-header a:hover,
+.quick-questions button:hover {
+  color: var(--accent);
+}
+
+footer {
+  padding: 35px 5vw;
+  background: var(--deep);
+  color: #aaa49a;
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  letter-spacing: 0.14em;
+}
+
+.footer-brand {
+  color: white;
+}
+
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    padding: 20px 5vw;
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+  }
+
+  .nav.mobile-open {
+    display: flex;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .header-action {
+    display: none;
+  }
+
+  .hero-content {
+    margin-left: 7vw;
+  }
+
+  .assistant-layout,
+  .availability-section {
+    grid-template-columns: 1fr;
+  }
+
+  .assistant-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .quick-questions {
+    margin-top: 0;
+  }
+
+  .availability-form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .availability-button {
+    grid-column: span 2;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    padding: 0 20px;
+  }
+
+  .hero {
+    min-height: 560px;
+  }
+
+  .hero-content {
+    margin-left: 25px;
+    padding-right: 20px;
+  }
+
+  .hero h1 {
+    font-size: 49px;
+  }
+
+  .hero-location {
+    left: 25px;
+    right: auto;
+  }
+
+  .intro-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-strip div {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 15px 25px;
+  }
+
+  .assistant-section,
+  .amenities-section {
+    padding: 70px 20px;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .assistant-side {
+    grid-template-columns: 1fr;
+  }
+
+  .chat-card {
+    min-height: 560px;
+  }
+
+  .messages {
+    padding: 18px;
+  }
+
+  .message-bubble {
+    max-width: 82%;
+  }
+
+  .availability-section {
+    padding: 70px 20px;
+    gap: 30px;
+  }
+
+  .availability-panel {
+    padding: 20px;
+  }
+
+  .availability-form {
+    grid-template-columns: 1fr;
+  }
+
+  .availability-button {
+    grid-column: auto;
+  }
+
+  .room-card {
+    grid-template-columns: 1fr;
+  }
+
+  .room-image {
+    min-height: 170px;
+  }
+
+  .amenity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .amenity-grid > div,
+  .amenity-grid > div:not(:first-child) {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 25px 0;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
